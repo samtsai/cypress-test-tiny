@@ -9,12 +9,18 @@
     "cypress:version": "cypress version",
     "cypress:info": "cypress info",
     "cypress:cache:list": "cypress cache list",
-    "list-videos": "ls -l cypress/videos"
+    "list-videos": "ls -l cypress/videos",
+    "start": "http-server app -c-1 --silent",
+    "test": "start-server-and-test 8080 'cypress open'",
+    "ci": "start-server-and-test 8080 'cypress run --spec cypress/e2e/spec.cy.js'"
   },
   "keywords": [],
   "author": "Cypress-io",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^13.9.0",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.3"
   },
   "repository": {
     "type": "git",
