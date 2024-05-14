@@ -10,5 +10,9 @@
       e.returnValue = "ask user";
       return;
     };
+
+    const iframe = document.createElement("iframe");
+    iframe.srcdoc = `<!DOCTYPE html><a href="#" onclick="confirm('Cypress should auto confirm from iFrame')">Confirm in iFrame</a>`;
+    document.body.appendChild(iframe);
   </script>
 </html>
