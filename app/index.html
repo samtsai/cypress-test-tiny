@@ -1,4 +1,14 @@
 <html>
   <a href="#" onclick="confirm('Cypress should auto confirm')">Confirm</a>
   <a href="#" onclick="alert('Cypress should auto accept')">Alert</a>
+  <script>
+    window.onbeforeunload = function (e) {
+      console.log("app window.onbeforeunload");
+      // will pop up a confirmation dialog
+      // asking the user before navigating away from the page
+      // or even simply reloading
+      e.returnValue = "ask user";
+      return;
+    };
+  </script>
 </html>
